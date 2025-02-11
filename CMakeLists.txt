@@ -18,7 +18,9 @@ target_link_libraries(test-pixels PRIVATE pixels)
 add_library(shapes
         sphere.h sphere.cpp
         ray.h ray.cpp
+        hit.h hit.cpp
 )
 target_link_libraries(shapes PUBLIC vector3d)
+target_link_libraries(shapes PUBLIC pixels)
 add_executable(test-intersect test-intersect.cpp)
 target_link_libraries(test-intersect PRIVATE shapes)

@@ -3,7 +3,7 @@
 
 class Hit {
 public:
-    Hit(double time, const Point3D& posiiton,
+    Hit(double time, const Point3D& position,
         const Vector3D& normal);
 
     double time;

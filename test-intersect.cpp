@@ -55,7 +55,7 @@ int main() {
         double x = row - (pixels.rows / 2.0);
         for (int col = 0; col < columns; ++col) {
             double y = col - (pixels.columns / 2.0);
-            Ray test({x, y, 0}, {0, 0, -1});
+            Ray test{{x, y, 0}, {0, 0, -1}};
             auto t = sphere.intersect(test);
             if (t) {
                 Hit hit = sphere.construct_hit(test, t.value());

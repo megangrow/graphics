@@ -17,28 +17,6 @@ Hit Sphere::construct_hit(const Ray &ray, double time) const {
     Vector3D normal = (point - center) / radius;
     return Hit{time, point, normal};
 }
-//
-//std::optional<double> Sphere::intersect(const Ray& ray) const {
-//    Point3D oc = center - ray.origin;
-//    double a = dot(ray.direction, ray.direction);
-//    double b = 2.0 * dot(ray.direction, oc);
-//    double c = dot(oc, oc) - radius*radius;
-//    double discriminant = b*b - 4*a*c;
-//    if (discriminant < epsilon) {
-//        return std::nullopt;
-//    }
-//    double t = (b - sqrt(discriminant)) / (2*a);
-//    if (discriminant < epsilon) {
-//        return std::nullopt; //double
-//    }
-//    else if (std::abs(discriminant) < epsilon) {
-//        return t; //single
-//    }
-//    else if (discriminant > epsilon) {
-//        return t;
-//    }
-//    return std::nullopt;
-//}
 
 std::optional<double> Sphere::intersect(const Ray& ray) const {
     Point3D pc = center - ray.origin;

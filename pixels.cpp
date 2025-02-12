@@ -27,7 +27,7 @@ const Color& Pixels::operator()(int row, int col) const {
   if (row < 0 || col < 0 || row >= rows || col >= columns) {
       throw std::overflow_error("Pixel is out of range!");
   }
-  return values[row*columns + col];
+  return values.at(row*columns + col);
 }
 
 Color& Pixels::operator()(int row, int col) {
@@ -35,7 +35,7 @@ Color& Pixels::operator()(int row, int col) {
     if (row < 0 || col < 0 || row > rows || col > columns) {
         throw std::overflow_error("Pixel is out of range!");
     }
-    return values[row*columns + col];
+    return values.at(row*columns + col);
 }
 
 void Pixels::save_ppm(const std::string& filename) {

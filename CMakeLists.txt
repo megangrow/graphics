@@ -25,8 +25,15 @@ target_link_libraries(shapes PUBLIC pixels)
 add_executable(test-intersect test-intersect.cpp)
 target_link_libraries(test-intersect PRIVATE shapes)
 
-# add library for vector class and operations
+# add library for camera
 add_library(camera camera.h camera.cpp)
 # test program for vector3d
 add_executable(test-camera test-camera.cpp)
 target_link_libraries(test-camera PRIVATE camera PUBLIC vector3d PUBLIC shapes PUBLIC pixels)
+
+
+# add library for world
+add_library(world world.h world.cpp)
+# test program for world
+add_executable(test-world test-world.cpp)
+target_link_libraries(test-world PRIVATE world PUBLIC camera)

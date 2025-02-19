@@ -31,9 +31,15 @@ add_library(camera camera.h camera.cpp)
 add_executable(test-camera test-camera.cpp)
 target_link_libraries(test-camera PRIVATE camera PUBLIC vector3d PUBLIC shapes PUBLIC pixels)
 
+#random
+add_library(random random.cpp random.h)
+# test program for random
+add_executable(test-random test-random.cpp)
+target_link_libraries(test-random PRIVATE random PUBLIC vector3d PUBLIC shapes PUBLIC pixels)
 
 # add library for world
 add_library(world world.h world.cpp)
 # test program for world
 add_executable(test-world test-world.cpp)
-target_link_libraries(test-world PRIVATE world PUBLIC camera)
+target_link_libraries(test-world PRIVATE world PUBLIC camera PUBLIC vector3d PUBLIC shapes PUBLIC pixels PUBLIC random)
+

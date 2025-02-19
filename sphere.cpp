@@ -1,5 +1,6 @@
 #include "sphere.h"
 #include "hit.h"
+#include "ray.h"
 #include <cmath>
 
 constexpr double epsilon = 1e-5;
@@ -38,8 +39,18 @@ std::optional<double> Sphere::intersect_geometrically(const Ray& ray) const {
     Point3D cp = center - ray.origin;
     double tmp = dot(cp, cp);
     double q = sqrt(-dot(ray.direction, cp) + tmp);
-    if (q > radius) {
+    if (q > radius + epsilon) {
         return std::nullopt;
     }
-    return pow(q,2);
+//    if (abs(q-radius) < epsilon) {
+//        // one hit
+//        // distance to the point length(tmp)
+//    }
+//    if () {
+//        t = tmp +- h if R, h pos, subtract,
+//        test values of point to figure out inside/outside
+//        inside = r+h, outside r-h
+//    }
+    // need to test for 3 cases (no, one, two hits)
+    return pow(q,2); // wrong
 }

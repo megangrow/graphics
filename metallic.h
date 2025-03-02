@@ -1,9 +1,11 @@
 #pragma once
 #include "material.h"
 
-class Diffuse : public Material {
+class Metallic : public Material {
 public:
-    // hardcode name
+    Metallic(Color color, bool emitting);
     Ray scatter(const Ray& ray, const Hit& hit) const override;
-    Diffuse(Color color, bool emitting);
+
+private:
+    double fuzz = 0.1;
 };

@@ -9,7 +9,7 @@ Pixels::Pixels(int columns, int rows)
 
 double gamma_correction(double value) {
     // double gamma = 2.2;
-    double gamma = 1.0;
+    double gamma = 1.7;
     return std::pow(value, 1/gamma);
 }
 

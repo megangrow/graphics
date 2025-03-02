@@ -20,3 +20,4 @@ const Color DarkGreen = {0.05, 0.44, 0.15};
 const Color Indigo = {0.02, 0.01, 0.44};
 const Color Brown = {0.46, 0.29, 0.22};
 const Color DarkPurple = {0.42, 0.11, 0.38};
+const Color Gold = {1, 0.84, 0};
